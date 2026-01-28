@@ -1,6 +1,6 @@
 ---
 # source: https://raw.githubusercontent.com/davila7/claude-code-templates/refs/heads/main/cli-tool/components/skills/development/git-commit-helper/SKILL.md
-name: Git Commit Helper
+name: mc-commit
 description: Generate descriptive commit messages by analyzing git diffs. Use when the user asks for help writing commit messages or reviewing staged changes.
 # hooks:
 #   PostToolUse:
@@ -95,7 +95,7 @@ git diff --staged path/to/file
 
 **DO:**
 - Use imperative mood ("add feature" not "added feature")
-- Keep first line under 50 characters
+- Keep first line under 60 characters
 - Capitalize first letter
 - No period at end of summary
 - Explain WHY not just WHAT in body
