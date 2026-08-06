@@ -28,14 +28,6 @@ sources:
       between buckets and get renamed — always compare with `git log --follow`,
       never trust a fixed path.
 
-  davila7:
-    repo: https://github.com/davila7/claude-code-templates
-    clone: https://github.com/davila7/claude-code-templates.git
-    license: MIT
-    layout_note: >
-      Large collection; skills live under
-      cli-tool/components/skills/<category>/<skill>/SKILL.md.
-
 skills:
   # -------------------------------------------------------------- home-grown -
   - name: abstraction-police
@@ -50,6 +42,18 @@ skills:
   - name: skill-sync
     origin: own
     note: The maintenance skill that keeps this manifest current.
+
+  - name: mc-commit
+    origin: own
+    derived_from: >
+      Started as a fork of the git-commit-helper skill in
+      davila7/claude-code-templates (MIT), at
+      cli-tool/components/skills/development/git-commit-helper/SKILL.md,
+      commit db3670b6 (2026-01-08). Retired from sync tracking on 2026-08-06:
+      upstream had not touched that file in seven months while our copy had
+      moved on, so there was nothing left to sync. Ours now — changes here are
+      not divergence from anything. The origin is kept for attribution, and
+      restated as a `# source:` comment in the skill's own frontmatter.
 
   # ------------------------------------------- mattpocock/skills (MIT) -------
   - name: grill-me
@@ -172,28 +176,7 @@ skills:
       most of our repos do not have, so the instruction would go nowhere; ours
       works everywhere. Do not "fix" this delta to match upstream.
 
-  # ----------------------------- davila7/claude-code-templates (MIT) ---------
-  - name: mc-commit
-    origin: fork
-    source: davila7
-    fork:
-      commit: db3670b609eba5228713443671398ad9f1ba5d7f
-      date: "2026-01-08"
-    files:
-      - local: skills/mc-commit/SKILL.md
-        upstream: cli-tool/components/skills/development/git-commit-helper/SKILL.md
-        snapshot: provenance/upstream/mc-commit/SKILL.md
-    local_changes: >
-      Renamed from "Git Commit Helper" to mc-commit. The PostToolUse hook
-      (logging to ~/.claude/git-commit-helper.log) is commented out rather than
-      deleted. Subject-line length guidance raised from 50 to 60 characters.
-      One explanatory comment removed from the example block.
-    upstream_status: >
-      Untouched upstream since the fork — db3670b6 is still the last commit on
-      that file as of 2026-08-06. The repo itself is active, this skill is not.
-
-# Standalone note: the agents/openai.yaml files of the home-grown skills
-# (abstraction-police, dead-code, uncommit, skill-sync) and of mc-commit are
+# Standalone note: the agents/openai.yaml files of every home-grown skill are
 # ours. The format and convention, however, come from mattpocock (upstream
 # commit 697d4ce9, "add Codex agents/openai.yaml metadata to every skill") — so
 # follow along if the format changes there.
@@ -237,3 +220,13 @@ reviews:
       defines the provenance vocabulary a CONTEXT.md would restate.
       Reconsider only if a repo here grows real domain depth or more than one
       maintainer.
+
+  - date: "2026-08-06"
+    scope: Retired mc-commit from sync tracking.
+    outcome: >
+      mc-commit is now origin: own. Upstream had not touched the file since
+      2026-01-08 while our copy had moved on by 16 lines, so tracking it cost
+      attention and returned nothing. Its snapshot is deleted and davila7 is no
+      longer listed as a source; the attribution survives in the skill's
+      derived_from field here and in its own frontmatter. Five forks remain,
+      all from mattpocock.
