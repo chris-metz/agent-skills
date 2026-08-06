@@ -1,0 +1,5 @@
+interface:
+  display_name: "MC Commit"
+  short_description: "Write a commit message from the diff"
+policy:
+  allow_implicit_invocation: true

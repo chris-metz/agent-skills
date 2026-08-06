@@ -1,0 +1,5 @@
+interface:
+  display_name: "Uncommit"
+  short_description: "Undo the last commit, keep the changes"
+policy:
+  allow_implicit_invocation: false

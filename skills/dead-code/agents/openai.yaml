@@ -1,0 +1,5 @@
+interface:
+  display_name: "Dead Code"
+  short_description: "Find code the repo no longer uses"
+policy:
+  allow_implicit_invocation: false

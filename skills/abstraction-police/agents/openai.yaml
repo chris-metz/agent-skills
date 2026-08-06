@@ -1,0 +1,5 @@
+interface:
+  display_name: "Abstraction Police"
+  short_description: "Find duplicate code worth unifying"
+policy:
+  allow_implicit_invocation: false
