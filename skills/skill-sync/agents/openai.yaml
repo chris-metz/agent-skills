@@ -1,5 +1,0 @@
-interface:
-  display_name: "Skill Sync"
-  short_description: "Check forked skills against their upstream"
-policy:
-  allow_implicit_invocation: false
