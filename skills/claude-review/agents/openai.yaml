@@ -1,0 +1,6 @@
+interface:
+  display_name: "Claude Review"
+  short_description: "Get Claude's independent code review"
+  default_prompt: "Use $claude-review to get Claude's second-opinion review of my current changes."
+policy:
+  allow_implicit_invocation: false
